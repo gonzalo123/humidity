@@ -43,4 +43,4 @@ noble.on('scanStop', function() {
 setTimeout(function() {
     noble.stopScanning();
     noble.startScanning();
-}, 1000);
+}, 3000);

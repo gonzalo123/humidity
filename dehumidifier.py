@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from ouimeaux.environment import Environment
 from subprocess import check_output
 import sys
