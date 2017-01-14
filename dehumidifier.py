@@ -8,7 +8,7 @@ import os
 threshold = 3
 
 def action(switch):
-    humidity = int(check_output(["%s/reader.js" % os.path.dirname(sys.argv[0])]))
+    humidity = int(check_output(["%s/reader.js" % os.path.dirname(sys.argv[0]), sensorMac]))
     if "Switch1" == switch.name:
         botton = expected - threshold
         isOn = False if switch.get_state() == 0 else True
@@ -25,10 +25,11 @@ def action(switch):
 
 if __name__ == '__main__':
     try:
-        mySwitch = sys.argv[1]
-        expected = int(sys.argv[2])
+        sensorMac = sys.argv[1]
+        mySwitch = sys.argv[2]
+        expected = int(sys.argv[3])
     except:
-        print 'Correct usage is "./dehumidifier.py <switch name> <expected humidity>"'
+        print 'Usage "./dehumidifier.py <sensorMac> <switch name> <expected humidity>"'
         sys.exit()
 
     env = Environment(action)

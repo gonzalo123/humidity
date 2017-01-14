@@ -21,5 +21,5 @@ npm install
 
 ## crontab example
 ```
-*/1 * * * *     /mnt/media/projects/hum/dehumidifier.py Switch1 50
+*/1 * * * *     /mnt/media/projects/hum/dehumidifier.py ff:ff:ff:ff:ff:ff Switch1 50
 ```

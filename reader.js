@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 noble = require('noble');
 
-var address = "78:a5:04:59:f9:c2";
 var status = false;
+var address = process.argv[2];
+
+if (!address) {
+    console.log('Usage "./reader.py <sensor mac address>"');
+    process.exit();
+}
 
 function hexToInt(hex) {
     var num, maxVal;
